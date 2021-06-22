@@ -19,7 +19,7 @@
   
     $item->getSingleCategorie();
 
-    if($item->idCategorie != null){
+    if($item->libele != null){
         // create array
         $Categorie_arr = array(
             "idCategorie" =>  $item->idCategorie,

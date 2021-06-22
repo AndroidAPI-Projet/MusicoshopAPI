@@ -50,11 +50,24 @@
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->numCmd = $dataRow['numCmd'];
-            $this->idUtilisateur = $dataRow['idUtilisateur'];
-            $this->dateCmd = $dataRow['dateCmd'];
-            $this->description = $dataRow['description'];
-            $this->total = $dataRow['total'];
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
+
+                $this->numCmd = $dataRow['numCmd'];
+                $this->idUtilisateur = $dataRow['idUtilisateur'];
+                $this->dateCmd = $dataRow['dateCmd'];
+                $this->description = $dataRow['description'];
+                $this->total = $dataRow['total'];
+
+            }else{
+
+                $this->numCmd = "";
+                $this->idUtilisateur = "";
+                $this->dateCmd = "";
+                $this->description = "";
+                $this->total = "";
+            }
         }        
     }
     

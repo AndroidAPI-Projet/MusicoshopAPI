@@ -45,10 +45,21 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->designation = $dataRow['designation'];
-            $this->img = $dataRow['img'];
-            $this->idCategorie = $dataRow['idCategorie'];
+                $this->designation = $dataRow['designation'];
+                $this->img = $dataRow['img'];
+                $this->idCategorie = $dataRow['idCategorie'];
+
+            }else{
+
+                $this->designation = "";
+                $this->img = "";
+                $this->idCategorie = "";
+            }
         }        
     }
     

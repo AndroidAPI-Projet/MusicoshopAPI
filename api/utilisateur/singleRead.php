@@ -19,7 +19,7 @@
   
     $item->getSingleUtilisateur();
 
-    if($item->idUtilisateur != null){
+    if($item->email != null){
         
         $utilisateur_arr = array(
             "idUtilisateur" =>  $item->idUtilisateur,

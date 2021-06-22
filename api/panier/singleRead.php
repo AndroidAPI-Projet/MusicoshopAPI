@@ -19,7 +19,7 @@
   
     $item->getSinglePanier();
 
-    if($item->Id_Panier != null){
+    if($item->sessId != null){
         // create array
         $Panier_arr = array(
             "Id_Panier" => $item->Id_Panier,

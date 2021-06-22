@@ -19,7 +19,7 @@
   
     $item->getSingleInstrument();
 
-    if($item->Id_Instrument != null){
+    if($item->designation != null){
         // create array
         $Instrument_arr = array(
             "Id_Instrument" => $item->Id_Instrument,

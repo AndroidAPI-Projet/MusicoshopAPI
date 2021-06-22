@@ -65,11 +65,24 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->email = $dataRow['email'];
-            $this->password = $dataRow['password'];
-            $this->type = $dataRow['type'];
-            $this->userName = $dataRow['userName'];
+                $this->email = $dataRow['email'];
+                $this->password = $dataRow['password'];
+                $this->type = $dataRow['type'];
+                $this->userName = $dataRow['userName'];
+
+            }else{
+
+                $this->email = "";
+                $this->password = "";
+                $this->type = "";
+                $this->userName = "";
+
+            }
         }     
         
         public function loginUtilisateur() {

@@ -19,7 +19,7 @@
     
     $item->getSingleCommande();
 
-    if($item->idCmd != null){
+    if($item->numCmd != null){
         // create array
         $Commande_arr = array(
             "idCmd" => $item->idCmd,

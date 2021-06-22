@@ -21,7 +21,7 @@
   
     $item->getSingleLigneCommande();
 
-    if($item->idLigneCmd != null){
+    if($item->idCmd != null){
         // create array
         $LigneCommande_arr = array(
             "idLigneCmd" => $item->idLigneCmd,

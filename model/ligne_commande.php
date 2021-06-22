@@ -45,10 +45,22 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->idCmd = $dataRow['idCmd'];
-            $this->Id_Article = $dataRow['Id_Article'];
-            $this->qtite = $dataRow['qtite'];
+                $this->idCmd = $dataRow['idCmd'];
+                $this->Id_Article = $dataRow['Id_Article'];
+                $this->qtite = $dataRow['qtite'];
+
+            }else{
+
+                $this->idCmd = "";
+                $this->Id_Article = "";
+                $this->qtite = "";
+
+            }
         }        
     }
     

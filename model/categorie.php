@@ -44,8 +44,18 @@
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->libele = $dataRow['libele'];
-            $this->page = $dataRow['page'];
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
+
+                $this->libele = $dataRow['libele'];
+                $this->page = $dataRow['page'];
+                
+            }else{
+
+                $this->libele = "";
+                $this->page = "";
+            }
         }        
     }
     

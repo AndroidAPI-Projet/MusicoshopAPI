@@ -42,12 +42,24 @@
 
             $stmt->execute();
 
-            $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);            
+            $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $itemCount = $stmt->rowCount();
 
-            $this->qtestock = $dataRow['qtestock'];
-            $this->prix = $dataRow['prix'];
-            $this->note = $dataRow['note'];
-            $this->Id_Instrument = $dataRow['Id_Instrument'];
+            if($itemCount > 0){
+
+                $this->qtestock = $dataRow['qtestock'];
+                $this->prix = $dataRow['prix'];
+                $this->note = $dataRow['note'];
+                $this->Id_Instrument = $dataRow['Id_Instrument'];
+
+            }else{
+
+                $this->qtestock = "";
+                $this->prix = "";
+                $this->note = "";
+                $this->Id_Instrument = "";
+            }
         }        
 
         // CREATE

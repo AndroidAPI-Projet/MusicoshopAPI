@@ -19,7 +19,7 @@
   
     $item->getSingleArticle();
 
-    if($item->Id_Article != null){
+    if($item->qtestock != null){
         // create array
         $article_arr = array(
             "Id_Article" =>  $item->Id_Article,
