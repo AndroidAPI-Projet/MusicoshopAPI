@@ -31,7 +31,7 @@
       
         http_response_code(200);
 
-        $ArrInti['SingleArticle'] = $Article_arr;
+        $ArrInti['SingleArticle'] = $article_arr;
 
         echo json_encode($ArrInti);
     }
