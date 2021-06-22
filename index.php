@@ -21,6 +21,18 @@ $router->map('GET', '/article/[i:Id_Article]', function($Id_Article) {
     require __DIR__ . '/api/article/singleRead.php';
 });
 
+$router->map('POST', '/article/create', function() {
+    require __DIR__ . '/api/article/create.php';
+});
+
+$router->map('POST', '/article/update', function() {
+    require __DIR__ . '/api/article/update.php';
+});
+
+$router->map('POST', '/article/delete', function() {
+    require __DIR__ . '/api/article/delete.php';
+});
+
 
 /**
  * categorie
@@ -33,13 +45,6 @@ $router->map('GET', '/categorie/[i:idCategorie]', function($idCategorie) {
     require __DIR__ . '/api/categorie/singleRead.php';
 });
 
-/*$router->map('POST', '/categorie/update', function() {
-    require __DIR__ . '/api/vol/update.php';
-});
-
-$router->map('POST', '/vol/delete', function() {
-    require __DIR__ . '/api/vol/delete.php';
-});*/
 
 /**
  * commande
