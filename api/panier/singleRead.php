@@ -30,7 +30,7 @@
         );
       
         http_response_code(200);
-        echo json_encode($Panier_arr);
+        
         $ArrInti['SinglePanier'] = $Panier_arr;
 
         echo json_encode($ArrInti);
