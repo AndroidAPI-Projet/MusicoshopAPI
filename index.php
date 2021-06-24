@@ -105,9 +105,23 @@ $router->map('GET', '/utilisateur/[i:IdUtilisateur]', function($IdUtilisateur) {
     require __DIR__ . '/api/utilisateur/singleRead.php';
 });
 
-$router->map('POST', '/utilisateur/login', function($IdUtilisateur) {
+/*$router->map('POST', '/utilisateur/login', function($IdUtilisateur) {
     require __DIR__ . '/api/utilisateur/login.php';
-});
+});*/
+
+//$router->map('GET', '/login/[*:email]/[*:password]/',require __DIR__ . '/api/utilisateur/login2.php','login');
+
+/*$router->map('GET', '/login/[a:json]', function($json) {
+    require __DIR__ . '/api/utilisateur/login2.php';
+});*/
+
+/*$router->map('GET', '/login/[a:email]/[b:pasword]', function($email,$pasword) {
+    require __DIR__ . '/api/utilisateur/login2.php';
+});*/
+
+/*$router->map('POST', '/login/[a:email]/[b:pasword]', function($email,$pasword) {
+    require __DIR__ . '/api/utilisateur/login2.php';
+});*/
 
 $match = $router->match();
 

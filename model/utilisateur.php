@@ -86,20 +86,15 @@
         }     
         
         public function loginUtilisateur() {
-            $sqlQuery = "SELECT * FROM " . $this->db_table . " WHERE email = ?  AND password = ? AND Statut = true LIMIT 0,1";
-            $stmt = $this->conn->prepare($sqlQuery);
-        
-            $this->email=htmlspecialchars(strip_tags($this->email));
-            $this->password=htmlspecialchars(strip_tags($this->password));
-
-            $stmt->bindParam(1, $this->email);
-            $stmt->bindParam(2, $this->password);
-
+            $sqlQuery = "SELECT * FROM " . $this->db_table . " WHERE email = '".$this->email."'  AND password = '".$this->password."' AND valideuser = 1 LIMIT 0,1";
+                       
+            $stmt = $this->conn->prepare($sqlQuery);   
+           
             $stmt->execute();
             
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $id = $dataRow['IdUtilisateur'];
+            $id = "";
 
             if ($dataRow) {
                 $this->idUtilisateur = $dataRow['idUtilisateur'];
@@ -116,6 +111,8 @@
                 $this->adresse = $dataRow['adresse'];
                 $this->ville = $dataRow['ville'];
                 $this->codePostal = $dataRow['codePostal'];
+
+                $id = $this->idUtilisateur;
             }
 
             return $id;

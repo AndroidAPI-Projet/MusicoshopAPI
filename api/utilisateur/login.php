@@ -12,8 +12,10 @@
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $item->Mail = $data->Mail;
-    $item->MotDePasse = $data->MotDePasse;
+    var_dump($data);
+
+    $item->email = $data->email;
+    $item->password = $data->password;
     
     if($item->loginUtilisateur()){
         echo json_encode("Vous êtes connecté");
