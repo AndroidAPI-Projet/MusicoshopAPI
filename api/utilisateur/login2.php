@@ -47,20 +47,13 @@
         );
       
         http_response_code(200);
-    
-        $ArrInti['UserLogged'] = $utilisateur_arr;
-        echo json_encode($ArrInti);
+        echo json_encode($utilisateur_arr);
 
 
     } else{
         http_response_code(200);
         ///echo json_encode("Mot de passe ou login erroné");
-        $resArray = array("conexion" => "Mot de passe ou login erroné");
-
-        array_push($conexionArr, $resArray);
-
-        $ArrInti['UserLogged'] = $conexionArr;
-        
-        echo json_encode($ArrInti);
+        $resArray = array("idUtilisateur" => "");
+        echo json_encode($resArray);
     }
 ?>
