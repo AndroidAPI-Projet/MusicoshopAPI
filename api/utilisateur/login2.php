@@ -52,7 +52,7 @@
 
     } else{
         http_response_code(200);
-        ///echo json_encode("Mot de passe ou login erroné");
+
         $resArray = array("idUtilisateur" => "");
         echo json_encode($resArray);
     }
